@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.gateway.patient",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "6.6.0",
+    "applicationType": "gateway",
+    "baseName": "gatewaypatient",
+    "packageName": "com.gateway.patient",
+    "packageFolder": "com/gateway/patient",
+    "serverPort": "8081",
+    "authenticationType": "uaa",
+    "uaaBaseName": "oauthpatient",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1584683901864,
+    "testFrameworks": ["gatling"],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "clientPackageManager": "npm",
+    "nativeLanguage": "en",
+    "languages": ["en", "nl"],
+    "blueprints": [],
+    "skipClient": true
+  }
+}

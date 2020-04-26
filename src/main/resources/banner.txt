@@ -1,0 +1,10 @@
+
+  ${AnsiColor.GREEN}██╗   ██╗${AnsiColor.RED}████████║██║   ██║       ████████║████████╗       ████████║████████╗
+  ${AnsiColor.GREEN}██║   ██║${AnsiColor.RED}      ██║██║   ██║       ██║   ██║   ██╔══╝       ██║      ╚══██╔══╝
+  ${AnsiColor.GREEN}████████║${AnsiColor.RED}████████║████████║██████ ████████║   ██║   ██████ ██║ ████║   ██║   
+  ${AnsiColor.GREEN}██╔═══██║${AnsiColor.RED}██ ═════╝╚═════██║       ██║         ██║          ██║   ██║   ██║   
+  ${AnsiColor.GREEN}██║   ██║${AnsiColor.RED}████████║      ██║       ██║         ██║          ████████║   ██║   
+  ${AnsiColor.GREEN}╚═╝   ╚═╝${AnsiColor.RED}╚═══════╝      ╚═╝       ╚═╝         ╚═╝          ╚═╝   ╚═╝   ╚═╝    
+
+${AnsiColor.BRIGHT_BLUE}:: Health24 🤓  :: Running Spring Boot ${spring-boot.version} ::
+:: https://www.health24.in ::${AnsiColor.DEFAULT}

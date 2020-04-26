@@ -1,0 +1,45 @@
+//add bitbucket notifier related configurations
+node {
+    try {
+            stage('SCM') {
+                checkout scm
+            }
+
+            stage('Build Image') {
+                    sh "mvn -Dmaven.test.skip clean install -f gatewaypatient"
+                    sh "ls -al gatewaypatient"
+                    sh "docker build -t health24/gatewaypatient:$BUILD_NUMBER $WORKSPACE/gatewaypatient"
+                    sh "docker tag health24/gatewaypatient:$BUILD_NUMBER health24/gatewaypatient:latest"
+               
+                //dir('oauth') {
+                //    sh "mvn -Dmaven.test.skip clean install -f /oauth"
+                //    sh "docker build -t health24/oauth:$BUILD_NUMBER $WORKSPACE/oauth"
+                //    sh "docker tag health24/oauth:$BUILD_NUMBER health24/oauth:latest"
+                //}       
+            }
+
+            stage('Deploy') {
+                dir('/Health24') {
+                    sh label: '', returnStdout: true, script: '''docker-compose up -d --force-recreate Java-gatewaypatient'''
+                }
+            }
+
+        echo 'This pipeline was successful.'
+
+    } catch (e) {
+
+        echo 'This pipeline was failed. Please look at Error log.'
+        // Since we're catching the exception in order to report on it,
+        // we need to re-throw it, to ensure that the build is marked as failed
+
+        throw e
+
+    } finally {
+        
+        echo 'Post pipeline cleanup started'
+
+        //cleanWs()
+        //sh "docker rmi -f \$(docker images -q -f dangling=true)"
+        //deleteDir()
+    }
+}
